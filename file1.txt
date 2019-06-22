@@ -1,2 +1,3 @@
 file1 text
 second line adding
+first file modified
