@@ -1,0 +1,72 @@
+Recon-ng
+https://www.youtube.com/watch?v=2UYbySxdCAg
+=========
+keys add filckr_api
+workspaces list
+workspaces remove kali.org
+workspaces add kali.org
+show
+show keys
+type modules
+show domains
+load netcraft
+
+show options
+set SOURCE kali.org
+show options
+show domains
+show hosts
+load resolve
+
+[get IP details of domian]
+use recon/hosts-hosts/resolve
+show options
+
+load freegeoip
+show options
+run
+show hosts
+show locations
+add locations
+-73.5748
+
+load reverse_geocode
+>back
+=================================================
+workspaces list
+workspaces add yahoo.com
+load netcraft
+show options
+set SOURCE yahoo.com
+run
+load resolve
+use recon/hosts-hosts/resolve
+show options
+
+show keys
+type modules
+show domains
+
+--------------
+| netdiscover|
+--------------
+
+netdiscover -h
+netdiscover -r 192.168.100.0/24		(Range of IP)
+netdiscover -p 192.168.100.0/24		(Passive sacnning)
+
+---------
+| Dmitry|
+---------
+Gather information about target ip/organization
+
+dmitry -o targetip 	{open to a file}
+dmitry -i targetip	{whois ip address}
+dmitry -w targetip	{whois domain name}
+dmitry -n targetip	{netcraft related domain name}
+dmitry -s targetip	{search for subdomain}
+dmitry -e targetip	{search for email}
+dmitry -p targetip	{search for TCP ports}
+dmitry -f targetip	{search for tcp-filter ports}
+
+
